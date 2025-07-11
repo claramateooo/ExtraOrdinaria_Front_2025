@@ -25,7 +25,7 @@ export const handler: Handlers = {
     if (name) {
       const response1 = await fetch(`https://rickandmortyapi.com/api/character/?name=${name}`);
       if (response1.status === 404) {
-        return ctx.render({ error: "No se encontraron personajes con ese nombre." });
+        return ctx.render({ error: "No se encontraron personajes." });
       }
       if (response1.status !== 200) {
         return new Response("Error Fetch");
